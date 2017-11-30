@@ -10,6 +10,88 @@
     tools:context="com.tdk.thedrunkkeeper.MainActivity"
     android:orientation="vertical">
 
+    <Button
+        android:id="@+id/main_activity_bro_texting_btn"
+        android:Layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="#3fd955"
+        android:text="Bro texting"
+        />
 
+    <Button
+        android:id="@+id/main_activity_3_btn"
+        android:Layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="#cede1a"
+        android:text="3"
+        />
+
+    <Button
+        android:id="@+id/main_activity_5_btn"
+        android:Layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="#ea4929"
+        android:text="5"
+        />
+
+    <Button
+        android:id="@+id/main_activity_danger_zone_btn"
+        android:Layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="#ea9229"
+        android:text="Danger zone"
+        />
+
+    <Button
+        android:id="@+id/main_activity_4_btn"
+        android:Layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="#3f51b5"
+        android:text="4"
+        />
+
+    <Button
+        android:id="@+id/main_activity_about_us_btn"
+        android:Layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="#21b2bb"
+        android:text="ABout us"
+        />
 
 </GridLayout>
