@@ -12,7 +12,7 @@
 
     <Button
         android:id="@+id/main_activity_bro_texting_btn"
-        android:Layout_width="wrap_content"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_columnWeight="1"
         android:layout_rowWeight="1"
@@ -26,7 +26,7 @@
 
     <Button
         android:id="@+id/main_activity_3_btn"
-        android:Layout_width="wrap_content"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_columnWeight="1"
         android:layout_rowWeight="1"
@@ -40,7 +40,7 @@
 
     <Button
         android:id="@+id/main_activity_5_btn"
-        android:Layout_width="wrap_content"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_columnWeight="1"
         android:layout_rowWeight="1"
@@ -54,7 +54,7 @@
 
     <Button
         android:id="@+id/main_activity_danger_zone_btn"
-        android:Layout_width="wrap_content"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_columnWeight="1"
         android:layout_rowWeight="1"
@@ -68,7 +68,7 @@
 
     <Button
         android:id="@+id/main_activity_4_btn"
-        android:Layout_width="wrap_content"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_columnWeight="1"
         android:layout_rowWeight="1"
@@ -82,7 +82,7 @@
 
     <Button
         android:id="@+id/main_activity_about_us_btn"
-        android:Layout_width="wrap_content"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_columnWeight="1"
         android:layout_rowWeight="1"
