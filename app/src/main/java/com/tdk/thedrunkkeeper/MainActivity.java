@@ -1,5 +1,6 @@
 package com.tdk.thedrunkkeeper;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -48,14 +49,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
 
             int index = (int) view.getTag();
+            Intent intent = null;
 
             if (index == 1){
-                Toast.makeText(this, "Bouton 1", Toast.LENGTH_SHORT).show();
+                intent = new Intent(this, BroTexting.class);
+                startActivity(intent);
             }
 
             if (index == 2){
                 Toast.makeText(this, "Bouton 2", Toast.LENGTH_SHORT).show();
-
             }
 
             if (index == 3){
