@@ -70,6 +70,6 @@ I hope it will help you as much as you needed, don't be afraid to get drunk :)
         android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/grandfab"/>
+        app:srcCompat="@drawable/grandgeo"/>
 
 </android.support.constraint.ConstraintLayout>

@@ -1,12 +1,16 @@
 package com.tdk.thedrunkkeeper;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
 import android.provider.ContactsContract;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.telephony.SmsManager;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,13 +21,14 @@ public class BroTexting extends AppCompatActivity implements View.OnClickListene
     private static final int PICK_CONTACT_REQUEST = 1;
     private EditText number;
     private String num;
+    private Button sendButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bro_texting);
 
-        Button sendButton = (Button) findViewById(R.id.bro_texting_send_btn);
+        sendButton = (Button) findViewById(R.id.bro_texting_send_btn);
         Button mcontact = (Button) findViewById(R.id.bro_texting_contact_btn);
         this.number = (EditText) findViewById(R.id.bro_texting_phone_numb_in);
         final TextView intro = (TextView) findViewById(R.id.bro_texting_intro_txt);
@@ -33,6 +38,15 @@ public class BroTexting extends AppCompatActivity implements View.OnClickListene
 
         sendButton.setOnClickListener(this);
         mcontact.setOnClickListener(this);
+
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS) != PackageManager.PERMISSION_GRANTED) {
+            Log.d("The Drunk Keeper", "Permission is not granted, requesting");
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.SEND_SMS}, 123);
+            sendButton.setEnabled(false);
+        } else {
+            Log.d("The Drunk Keeper", "Permission is granted");
+        }
+
     }
 
     @Override
@@ -41,18 +55,23 @@ public class BroTexting extends AppCompatActivity implements View.OnClickListene
 
         if (tag == 0){
             num = this.number.getText().toString();
-            Intent sms = new Intent(Intent.ACTION_SENDTO, Uri.parse("smsto:"+num));
-            sms.putExtra("sms_body", "Salut che passa");
-            startActivity(sms);
+            //Intent sms = new Intent(Intent.ACTION_SENDTO, Uri.parse("smsto:"+num));
+            //sms.putExtra("sms_body", "Salut che passa");
+            //startActivity(sms);
             //SmsManager manager = SmsManager.getDefault();
-            //manager .sendTextMessage(num, null, "Salut "+nom+" c'est la voix qui te parle", null, null);
+            //manager.sendTextMessage(num, null, "Salut c'est la voix qui te parle", null, null);
+            smsSend(num);
         }
 
         if (tag == 1){
             pickContact();
-
         }
 
+    }
+
+    private void smsSend(String numero){
+        SmsManager manager = SmsManager.getDefault();
+        manager.sendTextMessage(numero, null, "Hello World !", null, null);
     }
 
     private void pickContact() {
@@ -91,4 +110,19 @@ public class BroTexting extends AppCompatActivity implements View.OnClickListene
         }
     }
 
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        if (requestCode == 123) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                Log.d("PLAYGROUND", "Permission has been granted");
+                sendButton.setEnabled(true);
+            } else {
+                Log.d("PLAYGROUND", "Permission has been denied or request cancelled");
+                sendButton.setEnabled(false);
+            }
+        }
+    }
 }
+
+
+
