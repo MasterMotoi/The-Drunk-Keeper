@@ -1,5 +1,6 @@
 package com.tdk.thedrunkkeeper;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -13,19 +14,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button mbroTexting;
-        Button mdangerZone;
-        Button mbt3;
-        Button mbt4;
-        Button mbt5;
-        Button mabout;
-
-        mbroTexting = (Button) findViewById(R.id.main_activity_bro_texting_btn);
-        mdangerZone = (Button) findViewById(R.id.main_activity_danger_zone_btn);
-        mbt3 = (Button) findViewById(R.id.main_activity_3_btn);
-        mbt4 = (Button) findViewById(R.id.main_activity_4_btn);
-        mbt5 = (Button) findViewById(R.id.main_activity_5_btn);
-        mabout = (Button) findViewById(R.id.main_activity_about_us_btn);
+        Button mbroTexting = (Button) findViewById(R.id.main_activity_bro_texting_btn);
+        Button mdangerZone = (Button) findViewById(R.id.main_activity_danger_zone_btn);
+        Button mbt3 = (Button) findViewById(R.id.main_activity_3_btn);
+        Button mbt4 = (Button) findViewById(R.id.main_activity_4_btn);
+        Button mbt5 = (Button) findViewById(R.id.main_activity_5_btn);
+        Button mabout = (Button) findViewById(R.id.main_activity_about_us_btn);
 
         mbroTexting.setOnClickListener(this);
         mdangerZone.setOnClickListener(this);
@@ -48,14 +42,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
 
             int index = (int) view.getTag();
+            Intent intent = null;
 
             if (index == 1){
-                Toast.makeText(this, "Bouton 1", Toast.LENGTH_SHORT).show();
+                intent = new Intent(this, BroTexting.class);
+                startActivity(intent);
             }
 
             if (index == 2){
-                Toast.makeText(this, "Bouton 2", Toast.LENGTH_SHORT).show();
-
+                Toast.makeText(this, "DANGER ZOOOOOOOONE", Toast.LENGTH_SHORT).show();
             }
 
             if (index == 3){
@@ -74,8 +69,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
 
             if (index == 6){
-                Toast.makeText(this, "Bouton 6", Toast.LENGTH_SHORT).show();
-
+                intent = new Intent(this, AboutUs.class);
+                startActivity(intent);
             }
 
     }

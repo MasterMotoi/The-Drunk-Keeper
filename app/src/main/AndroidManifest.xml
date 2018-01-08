@@ -2,6 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.tdk.thedrunkkeeper">
 
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="true"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -15,6 +21,14 @@
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+        </activity>
+        <activity android:name=".BroTexting">
+        </activity>
+        <activity android:name=".AboutUs">
+        </activity>
+        <activity android:name=".fab">
+        </activity>
+        <activity android:name=".geo">
         </activity>
     </application>
 
