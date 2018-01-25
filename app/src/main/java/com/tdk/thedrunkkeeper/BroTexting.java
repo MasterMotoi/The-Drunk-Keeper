@@ -1,7 +1,9 @@
 package com.tdk.thedrunkkeeper;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
@@ -22,6 +24,8 @@ public class BroTexting extends AppCompatActivity implements View.OnClickListene
     private EditText number;
     private String num;
     private Button sendButton;
+    private int code;
+    private String sCode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,37 +53,39 @@ public class BroTexting extends AppCompatActivity implements View.OnClickListene
 
     }
 
+    // On the click of either one of the buttons
     @Override
     public void onClick(View v) {
         int tag = (int) v.getTag();
 
-        if (tag == 0){
+        if (tag == 0) {
             num = this.number.getText().toString();
-            //Intent sms = new Intent(Intent.ACTION_SENDTO, Uri.parse("smsto:"+num));
-            //sms.putExtra("sms_body", "Salut che passa");
-            //startActivity(sms);
-            //SmsManager manager = SmsManager.getDefault();
-            //manager.sendTextMessage(num, null, "Salut c'est la voix qui te parle", null, null);
-            smsSend(num);
+            randomDigit();
+            smsSend(num, sCode);
         }
 
-        if (tag == 1){
+        if (tag == 1) {
             pickContact();
         }
 
     }
 
-    private void smsSend(String numero){
+    // Send a sms
+    private void smsSend(String numero, String digit) {
         SmsManager manager = SmsManager.getDefault();
-        manager.sendTextMessage(numero, null, "Hello World !", null, null);
+        manager.sendTextMessage(numero, null, "Hello World ! The code is : " + digit, null, null);
+        SharedPreferences preferences = this.getSharedPreferences("com.The-Drunk-Keeper.app", Context.MODE_PRIVATE);
+        preferences.edit().putString("digit", digit).apply();
     }
 
+    // Function that allows to choose a contact
     private void pickContact() {
         Intent pickContactIntent = new Intent(Intent.ACTION_PICK, Uri.parse("content://contacts"));
         pickContactIntent.setType(ContactsContract.CommonDataKinds.Phone.CONTENT_TYPE); // Show user only contacts w/ phone numbers
         startActivityForResult(pickContactIntent, PICK_CONTACT_REQUEST);
     }
 
+    // Function that get the contact and his number
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         // Check which request we're responding to
         if (requestCode == PICK_CONTACT_REQUEST) {
@@ -110,6 +116,7 @@ public class BroTexting extends AppCompatActivity implements View.OnClickListene
         }
     }
 
+    // Ask a permission
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         if (requestCode == 123) {
@@ -122,7 +129,21 @@ public class BroTexting extends AppCompatActivity implements View.OnClickListene
             }
         }
     }
+
+    // Create a random digit
+    protected void randomDigit () {
+        code = (int)(Math.random() * 9999);
+        sCode = ""+code;
+        switch (sCode.length()){
+            case 1:
+                sCode = "000" + sCode;
+                break;
+            case 2:
+                sCode = "00" + sCode;
+                break;
+            case 3:
+                sCode = "0" + sCode;
+                break;
+        }
+    }
 }
-
-
-
