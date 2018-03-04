@@ -3,8 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/The-Drunk-Keeper.iml" filepath="$PROJECT_DIR$/The-Drunk-Keeper.iml" />
+      <module fileurl="file://C:\Users\fabpl\Documents\Prog\The-Drunk-Keeper\The-Drunk-Keeper.iml" filepath="C:\Users\fabpl\Documents\Prog\The-Drunk-Keeper\The-Drunk-Keeper.iml" />
       <module fileurl="file://C:\Users\Motoi\AndroidStudioProjects\The-Drunk-Keeper\TheDrunkKeeper.iml" filepath="C:\Users\Motoi\AndroidStudioProjects\The-Drunk-Keeper\TheDrunkKeeper.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Users\fabpl\Documents\Prog\The-Drunk-Keeper\app\app.iml" filepath="C:\Users\fabpl\Documents\Prog\The-Drunk-Keeper\app\app.iml" />
       <module fileurl="file://C:\Users\Motoi\AndroidStudioProjects\The-Drunk-Keeper\app\app.iml" filepath="C:\Users\Motoi\AndroidStudioProjects\The-Drunk-Keeper\app\app.iml" />
     </modules>
   </component>
