@@ -49,7 +49,7 @@
         android:layout_marginRight="10dp"
         android:layout_marginBottom="10dp"
         android:background="#ea4929"
-        android:text="Yo, this is a test"
+        android:text="5"
         />
 
     <Button

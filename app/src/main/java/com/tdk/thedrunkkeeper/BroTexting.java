@@ -17,6 +17,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class BroTexting extends AppCompatActivity implements View.OnClickListener {
 
@@ -62,6 +63,7 @@ public class BroTexting extends AppCompatActivity implements View.OnClickListene
             num = this.number.getText().toString();
             randomDigit();
             smsSend(num, sCode);
+            Toast.makeText(this, "SMS sent !", Toast.LENGTH_SHORT).show();
         }
 
         if (tag == 1) {
