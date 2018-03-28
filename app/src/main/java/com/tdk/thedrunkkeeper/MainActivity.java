@@ -55,8 +55,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
 
             if (index == 3){
-                Toast.makeText(this, "Bouton 3", Toast.LENGTH_SHORT).show();
-
+                intent = new Intent(this, MapsActivity.class);
+                startActivity(intent);
             }
 
             if (index == 4){

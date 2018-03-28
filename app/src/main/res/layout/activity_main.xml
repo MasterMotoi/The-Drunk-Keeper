@@ -28,14 +28,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_columnWeight="1"
-        android:layout_rowWeight="1"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="10dp"
         android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_rowWeight="1"
         android:background="#cede1a"
-        android:text="3"
-        />
+        android:text="Map" />
 
     <Button
         android:id="@+id/main_activity_5_btn"
